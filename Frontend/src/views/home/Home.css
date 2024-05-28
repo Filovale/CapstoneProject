@@ -1,0 +1,17 @@
+.container-sm {
+  padding-top: 110px !important;
+  text-align: center;
+}
+
+.blog-main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: rgb(28,115,168);
+}
+
+h4 {
+  color:rgb(28,115,168);
+  padding-bottom: 10px;
+}

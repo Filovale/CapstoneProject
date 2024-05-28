@@ -1,0 +1,71 @@
+.blog-details-cover {
+  width: 50%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  max-height: 80vh;
+  object-fit: cover;
+  object-position: 0% 0%;
+  margin-top: 50px;
+}
+
+.blog-details-root {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.blog-details-title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.blog-details-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-details-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rdw-editor-main {
+  border: 1px solid grey
+}
+
+/* qui quelle dei link del software*/
+.blog-details-softwares {
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blog-details-softwares ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.blog-details-softwares li {
+  margin-bottom: 10px;
+}
+
+.blog-details-softwares a {
+  color: #007bff; /* Colore del testo del link */
+  text-decoration: none;
+  font-size: 1rem; /* Dimensione del font */
+}
+
+.blog-details-softwares a:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Colore del testo del link al passaggio del mouse */
+}
+

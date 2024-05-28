@@ -1,0 +1,47 @@
+.blog-navbar-brand {
+  width: 180px;
+}
+
+.blog-navbar {
+  background-color: white;
+  box-shadow: 2px 0px 4px 1px rgba(222, 222, 222, 1);
+  padding-bottom:0cap;
+}
+
+.navbar-text {
+  color: rgb(28,115,168);
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  color: rgb(28,115,168);
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #fa89e6;
+  border-radius: 5px;
+}
+
+.blog-navbar-login {
+  width: 30px;  /* Riduciamo la dimensione per un tondino piccolo */
+  height: 30px;  /* Assicuriamo che sia un quadrato perfetto */
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s;
+}

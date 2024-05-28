@@ -1,0 +1,74 @@
+[
+  {
+    "_id": 1,
+    "category": "Getting Started",
+    "title": "Mavic 3E",
+    "cover": "https://www1.djicdn.com/cms/uploads/2f3b03cc41a29708eea071f487f4c576@374*374.png",
+    "author" : "https://www.dji.com/it",
+    "info" : "https://enterprise.dji.com/it/mavic-3-enterprise/specs" ,
+    "software": {
+          "name": ["Litchi" , "UgCS" , "Dronelink"] ,
+          "link": ["https://flylitchi.com/" , "https://www.sphengineering.com/flight-planning/ugcs-downloads" , "https://www.dronelink.com/download"]
+    }
+  },
+  {
+    "_id": 2,
+    "category": "Getting Started",
+    "title": "Mini 4 PRO",
+    "cover": "https://m.media-amazon.com/images/I/617rfzwf0fL.jpg" ,
+    "author" : "https://www.dji.com/it" ,
+    "info" : "https://www.dji.com/it/mini-4-pro/specs" ,
+    "software": {
+      "name": ["Litchi" , "UgCS" , "Dronelink"] ,
+      "link": ["https://flylitchi.com/" , "https://www.sphengineering.com/flight-planning/ugcs-downloads" , "https://www.dronelink.com/download"]
+    }
+  },
+  {
+    "_id": 3,
+    "category": "Getting Started",
+    "title": "Mavic 3 PRO",
+    "cover": "https://www.drone-store.it/wp-content/uploads/2023/04/dji-mavic-3-pro-fly-more-combo-1-600x600.webp" ,
+    "author" : "https://www.dji.com/it" ,
+    "info" : "https://www.dji.com/it/mavic-3-pro/specs" ,
+    "software": {
+      "name": ["Litchi" , "UgCS" , "Dronelink"] ,
+      "link": ["https://flylitchi.com/" , "https://www.sphengineering.com/flight-planning/ugcs-downloads" , "https://www.dronelink.com/download"]
+    }
+  },
+  {
+    "_id": 4,
+    "category": "Getting Started",
+    "title": "Mini 3",
+    "cover": "https://stormsend1.djicdn.com/tpc/uploads/spu/cover/fada49102504cc9f7c2052e2e6fbacac@ultra.png" ,
+    "author" : "https://www.dji.com/it" ,
+    "info" : "https://www.dji.com/it/mini-3/specs" ,
+    "software": {
+      "name": ["Litchi" , "UgCS" , "Dronelink"] ,
+      "link": ["https://flylitchi.com/" , "https://www.sphengineering.com/flight-planning/ugcs-downloads" , "https://www.dronelink.com/download"]
+    }
+  },
+  {
+    "_id": 5,
+    "category": "Getting Started",
+    "title": "Matrice 300 RTK",
+    "cover": "https://www.horusdynamics.com/wp-content/uploads/2020/05/dji-matrice-300-rtk.png" ,
+    "author" : "https://www.dji.com/it" ,
+    "info" : "https://enterprise.dji.com/it/matrice-300/specs" ,
+    "software": {
+      "name": ["UgCS" , "Dronelink"] ,
+      "link": ["https://www.sphengineering.com/flight-planning/ugcs-downloads" , "https://www.dronelink.com/download"]
+    }
+  },
+  {
+    "_id": 6,
+    "category": "Getting Started",
+    "title": "Matrice 350 RTK",
+    "cover": "https://www.horusdynamics.com/wp-content/uploads/2023/05/kit-dji-matrice-350.jpg" ,
+    "author" : "https://www.dji.com/it" ,
+    "info" : "https://enterprise.dji.com/it/matrice-350-rtk/specs" ,
+    "software": {
+      "name": ["UgCS" , "Dronelink"] ,
+      "link": ["https://www.sphengineering.com/flight-planning/ugcs-downloads" , "https://www.dronelink.com/download"]
+    }
+  }
+]
