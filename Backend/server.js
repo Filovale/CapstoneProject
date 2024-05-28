@@ -2,9 +2,11 @@ import express from "express"
 import endpoints from "express-list-endpoints"
 import mongoose from "mongoose"
 import { config } from "dotenv"
+import cors from "cors"
 //import { authorRoute } from "./services/authors/index.js"
 import { droneRoute } from "./services/drones/index.js"
 import { badRequestHandler, genericErrorHandler, notfoundHandler, unauthorizedHandler } from "./errorHandlers.js"
+import { reviewsRoute } from "./services/reviews/index.js"
 
 //Viene chiamata la funzione config() di dotenv per caricare le variabili d'ambiente dal file .env
 config()
@@ -13,10 +15,11 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 app.use(express.json())
+app.use(cors({origin:"http://localhost:3000"}))
 
 //app.use("/users", authorRoute)
 app.use("/drones", droneRoute)
-
+app.use(reviewsRoute)
 app.use(badRequestHandler)
 app.use(unauthorizedHandler)
 app.use(notfoundHandler)

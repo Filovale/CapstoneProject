@@ -44,7 +44,8 @@ const dronesSchema = new Schema(
           type: String
         }
       }
-    ]
+    ],
+    reviews: [{ type: Schema.Types.ObjectId, ref: "Review", required: true }]
   },
   { collection: "drones" }
 )

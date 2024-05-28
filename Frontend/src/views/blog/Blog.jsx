@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import posts from "../../data/drone.json";
+//import posts from "../../data/drone.json";
 import "./Blog.css";
 
 const Blog = props => {
@@ -13,14 +13,26 @@ const Blog = props => {
 
   useEffect(() => {
     const { id } = params;
-    const drone = posts.find(post => post._id.toString() === id);
+    //const drone = posts.find(post => post._id.toString() === id);
 
+   fetch("http://localhost:3001/drones").then((response) => {
+    return (response.json())
+   }).then((json) => {
+   console.log(json[1])
+   setDrone(json[1])
+   setLoading(false);
+   })
+   
+
+
+/*
     if (drone) {
-      setDrone(drone);
-      setLoading(false);
+      //setDrone(drone);
+      
     } else {
       navigate("/404");
     }
+    */
   }, []);
 
   if (loading) {
@@ -44,9 +56,10 @@ const Blog = props => {
             <div className="blog-details-softwares">
               <h4>Here there are all the compatible software to plan your flight:</h4>
               <ul>
-                {drone.software.name.map((name, index) => (
+                
+                {drone.software.map(({name, link}, index) => (
                     <li key={index}>
-                        <a href={drone.software.link[index]}>
+                        <a href={link}>
                             {name}
                         </a>
                     </li>
