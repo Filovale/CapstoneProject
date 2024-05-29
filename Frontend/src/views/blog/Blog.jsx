@@ -1,39 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-//import posts from "../../data/drone.json";
 import "./Blog.css";
 
 const Blog = props => {
 
   const [drone, setDrone] = useState({});
   const [loading, setLoading] = useState(true);
-  const params = useParams();
+  //const params = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const { id } = params;
-    //const drone = posts.find(post => post._id.toString() === id);
 
-   fetch("http://localhost:3001/drones").then((response) => {
-    return (response.json())
-   }).then((json) => {
-   console.log(json[1])
-   setDrone(json[1])
-   setLoading(false);
-   })
-   
+    if (id) {
 
-
-/*
-    if (drone) {
-      //setDrone(drone);
-      
-    } else {
-      navigate("/404");
+      fetch(`http://localhost:3001/drones/${id}`)
+        .then((response) => response.json())
+        .then((json) => {
+          setDrone(json);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching drone data:", error);
+          setLoading(false);
+        });
     }
-    */
-  }, []);
+  }, [id]);
+
 
   if (loading) {
     return <div>loading</div>;
@@ -57,11 +51,9 @@ const Blog = props => {
               <h4>Here there are all the compatible software to plan your flight:</h4>
               <ul>
                 
-                {drone.software.map(({name, link}, index) => (
+                {drone.software && drone.software.map(({name, link}, index) => (
                     <li key={index}>
-                        <a href={link}>
-                            {name}
-                        </a>
+                        <a href={link}>{name}</a>
                     </li>
                 ))}
             </ul>

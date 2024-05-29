@@ -3,24 +3,22 @@ import Review from "./model.js"
 import Drone from "../drones/model.js"
 export const reviewsRoute = Router()
 
-//Questa rotta gestisce la richiesta GET per ottenere tutti i droni.
+
 reviewsRoute.get("/drones/:droneid/reviews", async (req, res, next) => {
 
   try {
 
-    //http://localhost:3001/blogs?title=tech&page=3
-
-    //Utilizzo il metodo find() di Mongoose per trovare i blog nel database, eventualmente filtrati in base al titolo fornito nella query.
     let drone = await Drone.findById(req.params.droneid).populate({
       path:"reviews", 
     })
-//  console.log(drones.length, page)
     res.send(drone.reviews)
 
   } catch (error) {
     next(error)
   }
 })
+
+
 /*
 //Questa rotta gestisce la richiesta DELETE per eliminare un blog esistente in base all'ID.
 blogRoute.delete("/:id", async (req, res, next) => {

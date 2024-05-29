@@ -8,9 +8,9 @@ const Footer = (props) => {
                 <div className="column">
                     <h5>Contacts</h5>
                     <ul>
-                        <li>Address: Via Example 123, Città</li>
-                        <li>Phone: +123 456 7890</li>
-                        <li>E-mail: info@example.com</li>
+                        <li>Address: Str: Prinzera 37</li>
+                        <li>Phone: +39 3349936330</li>
+                        <li>E-mail: vfilippo977@gmail.com</li>
                     </ul>
                 </div>
                 <div className="column">
