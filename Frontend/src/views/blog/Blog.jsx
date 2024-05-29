@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import DroneReviews from "./DroneReviews";
 import "./Blog.css";
 
 const Blog = props => {
@@ -58,6 +59,7 @@ const Blog = props => {
                 ))}
             </ul>
             </div>
+            <DroneReviews droneId={id} />
         </Container>
 
     );
