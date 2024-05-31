@@ -44,7 +44,7 @@ reviewsRoute.post("/drones/:droneid/reviews", async (req, res, next) => {
 
   try {
 
-    let review = new Review({...req.body, drone:req.params.droneid});
+    let review = new Review({...req.body, drone:req.params.droneid, date:new Date(req.body.date)});
     await review.save();
 
     await Drone.findByIdAndUpdate(req.params.droneid, {

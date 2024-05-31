@@ -2,6 +2,14 @@ import { Schema, model } from "mongoose"
 
 const reviewsSchema = new Schema(
   {
+    author: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      required: true,
+    },
     title: {
       type: String,
       required: true,

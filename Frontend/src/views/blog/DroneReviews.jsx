@@ -42,7 +42,7 @@ const DroneReviews = ({ droneId }) => {
           <ListGroup.Item key={index} className="review-item">
             <h5>{review.title}</h5>
             <p>{review.description}</p>
-            <small>By {review.author} on {review.date}</small>
+            <small>By {review.author} on {(new Date(review.date)).toLocaleDateString("it-IT")}</small>
             <div>Rating: {review.stars} Star{review.stars > 1 ? "s" : ""}</div>
           </ListGroup.Item>
         ))}

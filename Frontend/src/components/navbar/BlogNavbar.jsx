@@ -17,7 +17,7 @@ const NavBar = props => {
           </div>
       </Container>
         <ul class="navbar d-flex align-items-center">
-            <li><a href="#home">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#about">About</a></li>
             <Navbar.Brand as={Link} to="/">
               <img className="blog-navbar-login" alt="logo" src={login} />
