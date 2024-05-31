@@ -6,6 +6,8 @@ import cors from "cors"
 import { droneRoute } from "./services/drones/index.js"
 import { badRequestHandler, genericErrorHandler, notfoundHandler, unauthorizedHandler } from "./errorHandlers.js"
 import { reviewsRoute } from "./services/reviews/index.js"
+import { userRoute } from "./services/users/index.js"
+
 
 config()
 
@@ -17,6 +19,7 @@ app.use(cors({origin:"http://localhost:3000"}))
 
 
 app.use("/drones", droneRoute)
+app.use("/users", userRoute)
 app.use(reviewsRoute)
 app.use(badRequestHandler)
 app.use(unauthorizedHandler)
