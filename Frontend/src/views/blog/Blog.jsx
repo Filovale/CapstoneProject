@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DroneReviews from "./DroneReviews";
 import "./Blog.css";
 
@@ -8,9 +8,7 @@ const Blog = props => {
 
   const [drone, setDrone] = useState({});
   const [loading, setLoading] = useState(true);
-  //const params = useParams();
   const { id } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
 

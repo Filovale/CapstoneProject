@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
+import PostReview from "./PostReview"; 
 import "./DroneReviews.css";
 
 const DroneReviews = ({ droneId }) => {
@@ -24,6 +25,10 @@ const DroneReviews = ({ droneId }) => {
     }
   }, [droneId]);
 
+  const handleReviewPosted = (newReview) => {
+    setReviews([...reviews, newReview]);
+  };
+
   if (loading) {
     return <div>Loading reviews...</div>;
   }
@@ -35,12 +40,14 @@ const DroneReviews = ({ droneId }) => {
       <ListGroup>
         {reviews.map((review, index) => (
           <ListGroup.Item key={index} className="review-item">
-            <h5>{review.author}</h5>
-            <p>{review.content}</p>
-            <small>{review.date}</small>
+            <h5>{review.title}</h5>
+            <p>{review.description}</p>
+            <small>By {review.author} on {review.date}</small>
+            <div>Rating: {review.stars} Star{review.stars > 1 ? "s" : ""}</div>
           </ListGroup.Item>
         ))}
       </ListGroup>
+      <PostReview droneId={droneId} onReviewPosted={handleReviewPosted} />
     </div>
   );
 };
