@@ -5,11 +5,11 @@
 .blog-navbar {
   background-color: white;
   box-shadow: 2px 0px 4px 1px rgba(222, 222, 222, 1);
-  padding-bottom:0cap;
+  padding-bottom: 0;
 }
 
 .navbar-text {
-  color: rgb(28,115,168);
+  color: rgb(28, 115, 168);
 }
 
 .navbar {
@@ -26,7 +26,7 @@
 }
 
 .navbar a {
-  color: rgb(28,115,168);
+  color: rgb(28, 115, 168);
   text-decoration: none;
   padding: 10px 20px;
   display: block;
@@ -39,9 +39,10 @@
 }
 
 .blog-navbar-login {
-  width: 30px;  /* Riduciamo la dimensione per un tondino piccolo */
-  height: 30px;  /* Assicuriamo che sia un quadrato perfetto */
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 2px solid #fff;
   transition: transform 0.3s;
+  cursor: pointer;
 }
