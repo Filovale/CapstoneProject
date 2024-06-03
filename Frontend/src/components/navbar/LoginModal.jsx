@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { Modal, Button, Form, Alert } from "react-bootstrap";
 
 const LoginModal = ({ show, handleClose, handleLogin }) => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
     // Esegui chiamata al server per il login
     fetch("http://localhost:3001/users/login", {
@@ -20,24 +18,20 @@ const LoginModal = ({ show, handleClose, handleLogin }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        /*
         if (data.success) {
           handleLogin(data.token);
           handleClose();
         } else {
           setError(data.message);
         }
-        */
-       console.log(data)
-       localStorage.setItem("token", data.token);
       })
       .catch((error) => {
+        console.error("Error during login:", error); // Log di debug
         setError("An error occurred. Please try again.");
       });
   };
 
   return (
-    
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Login</Modal.Title>

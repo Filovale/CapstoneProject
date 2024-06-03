@@ -8,7 +8,6 @@ import RegisterModal from "./RegisterModal";
 import "./BlogNavbar.css";
 
 const NavBar = props => {
-
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -16,6 +15,7 @@ const NavBar = props => {
   const handleLogin = (token) => {
     setLoggedIn(true);
     // salva il token nel local storage o gestiscilo secondo le tue necessità
+    localStorage.setItem("authToken", token);
   };
 
   return (
@@ -32,9 +32,10 @@ const NavBar = props => {
         <ul className="navbar d-flex align-items-center">
           <li><a href="/">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><Button onClick={() => setShowRegister(true)}>Register</Button></li>
           <li>
             {loggedIn ? (
-              <span>Welcome!</span>
+              <span>Welcome!</span> // Puoi aggiungere altre opzioni per gli utenti loggati
             ) : (
               <img
                 className="blog-navbar-login"
@@ -44,7 +45,6 @@ const NavBar = props => {
               />
             )}
           </li>
-          <li><Button onClick={() => setShowRegister(true)}>Register</Button></li>
         </ul>
       </Navbar>
       <LoginModal
