@@ -11,7 +11,7 @@ const RegisterModal = ({ show, handleClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Esegui chiamata al server per la registrazione
-    fetch("http://localhost:3001/register", {
+    fetch("http://localhost:3001/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

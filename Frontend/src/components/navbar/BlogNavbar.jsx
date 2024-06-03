@@ -44,6 +44,7 @@ const NavBar = props => {
               />
             )}
           </li>
+          <li><Button onClick={() => setShowRegister(true)}>Register</Button></li>
         </ul>
       </Navbar>
       <LoginModal
@@ -55,7 +56,6 @@ const NavBar = props => {
         show={showRegister}
         handleClose={() => setShowRegister(false)}
       />
-      <Button onClick={() => setShowRegister(true)}>Register</Button>
     </>
   );
 };

@@ -11,7 +11,7 @@ const LoginModal = ({ show, handleClose, handleLogin }) => {
 
     e.preventDefault();
     // Esegui chiamata al server per il login
-    fetch("http://localhost:3001/login", {
+    fetch("http://localhost:3001/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,12 +20,16 @@ const LoginModal = ({ show, handleClose, handleLogin }) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        /*
         if (data.success) {
           handleLogin(data.token);
           handleClose();
         } else {
           setError(data.message);
         }
+        */
+       console.log(data)
+       localStorage.setItem("token", data.token);
       })
       .catch((error) => {
         setError("An error occurred. Please try again.");

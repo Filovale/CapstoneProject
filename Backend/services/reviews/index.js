@@ -1,6 +1,7 @@
 import { Router } from "express"
 import Review from "./model.js"
 import Drone from "../drones/model.js"
+import { authMiddleware } from "../../auth/middleware.js"
 export const reviewsRoute = Router()
 
 
@@ -40,11 +41,17 @@ blogRoute.delete("/:id", async (req, res, next) => {
 */
 
 //Questa rotta gestisce la richiesta POST per creare un nuovo blog.
-reviewsRoute.post("/drones/:droneid/reviews", async (req, res, next) => {
+reviewsRoute.post("/drones/:droneid/reviews", authMiddleware, async (req, res, next) => {
 
   try {
 
-    let review = new Review({...req.body, drone:req.params.droneid, date:new Date(req.body.date)});
+    console.log(req.user);
+    let review = new Review({
+      ...req.body, 
+      drone:req.params.droneid, 
+      date:new Date(req.body.date),
+      author:req.user.name + " " + req.user.lastName,
+    });
     await review.save();
 
     await Drone.findByIdAndUpdate(req.params.droneid, {
