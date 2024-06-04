@@ -5,6 +5,8 @@ const RegisterModal = ({ show, handleClose }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -16,11 +18,11 @@ const RegisterModal = ({ show, handleClose }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, name, lastName }),
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.success) {
+        if (data) {
           setSuccess("Registration successful!");
           setError("");
         } else {
@@ -44,6 +46,26 @@ const RegisterModal = ({ show, handleClose }) => {
         {error && <Alert variant="danger">{error}</Alert>}
         {success && <Alert variant="success">{success}</Alert>}
         <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="registerName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group controlId="registerLastNAme">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </Form.Group>
           <Form.Group controlId="registerEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control

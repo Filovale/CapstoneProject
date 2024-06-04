@@ -1,6 +1,8 @@
 import { Router } from "express"
 import Drone from "./model.js"
 import q2m from "query-to-mongo"
+import Review from "../reviews/model.js"
+import { authMiddleware } from "../../auth/middleware.js"
 export const droneRoute = Router()
 
 droneRoute.get("/", async (req, res, next) => {
@@ -14,7 +16,6 @@ droneRoute.get("/", async (req, res, next) => {
       .limit(20)
       .skip(20 * (page - 1))
 
-    console.log(drones.length, page)
     res.send(drones)
 
   } catch (error) {
@@ -36,3 +37,42 @@ droneRoute.get("/:id", async (req, res, next) => {
   }
 })
 
+droneRoute.get("/:id/reviews", async (req, res, next) => {
+
+  try {
+
+    let drone = await Drone.findById(req.params.id).populate({
+      path:"reviews", 
+    })
+    res.send(drone.reviews)
+
+  } catch (error) {
+    next(error)
+  }
+})
+
+droneRoute.post("/:id/reviews", authMiddleware, async (req, res, next) => {
+
+  try {
+
+    let review = new Review({
+      ...req.body, 
+      drone:req.params.id,
+      date:new Date(req.body.date),
+      author:req.user.name + " " + req.user.lastName,
+    });
+    await review.save();
+    console.log(review)
+
+    await Drone.findByIdAndUpdate(req.params.id, {
+      $push:{
+        reviews:review._id
+      }
+    })
+
+    res.send(review)
+
+  } catch (error) {
+    next(error)
+  }
+})

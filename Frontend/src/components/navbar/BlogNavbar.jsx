@@ -13,6 +13,7 @@ const NavBar = props => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = (token) => {
+    console.log(token)
     setLoggedIn(true);
     // salva il token nel local storage o gestiscilo secondo le tue necessità
     localStorage.setItem("authToken", token);

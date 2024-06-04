@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Alert } from "react-bootstrap";
 
-const LoginModal = ({ show, handleClose, handleLogin }) => {
+const LoginModal = ({ show, handleClose , handleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -18,7 +18,7 @@ const LoginModal = ({ show, handleClose, handleLogin }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.success) {
+        if (data.token) {
           handleLogin(data.token);
           handleClose();
         } else {
