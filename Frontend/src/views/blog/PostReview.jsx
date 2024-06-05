@@ -61,15 +61,6 @@ const PostReview = ({ droneId, onReviewPosted }) => {
           <Collapse in={formVisible}>
             <div id="review-form">
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="reviewAuthor">
-                  <Form.Label>Author</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={author}
-                    onChange={(e) => setAuthor(e.target.value)}
-                    required
-                  />
-                </Form.Group>
                 <Form.Group controlId="reviewTitle">
                   <Form.Label>Title</Form.Label>
                   <Form.Control
