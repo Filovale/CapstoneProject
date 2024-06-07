@@ -1,29 +1,38 @@
 .drone-reviews {
-  margin-top: 30px;
+  margin: 100px;
+  background-color: #e6f0ff; /* Azzurro chiaro */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .drone-reviews h4 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #003366; /* Blu scuro */
 }
 
 .review-item {
   margin-bottom: 20px;
   padding: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #cce0ff; /* Bordo azzurro chiaro */
   border-radius: 8px;
+  background-color: #ffffff; /* Bianco */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .review-item h5 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #003366; /* Blu scuro */
 }
 
 .review-item p {
   font-size: 1rem;
   margin-bottom: 10px;
+  color: #333333; /* Grigio scuro */
 }
 
 .review-metadata {
@@ -34,13 +43,17 @@
 
 .review-metadata small {
   font-size: 0.9rem;
+  color: #666666; /* Grigio medio */
 }
 
 .review-metadata strong {
-  color: #df0d0d; /* Colore personalizzato per l'autore */
+  color: #0066cc; /* Blu */
 }
 
-.review-metadata .badge {
-  font-size: 0.9rem;
-  padding: 6px 10px;
+.review-rating {
+  font-size: 0.8rem; /* Riduci la dimensione del testo */
+  padding: 4px 8px; /* Riduci il padding */
+  background-color: #003366; /* Blu scuro */
+  color: #ffffff; /* Bianco */
+  border-radius: 5px; /* Arrotonda gli angoli */
 }

@@ -38,9 +38,9 @@ const DroneReviews = ({ droneId }) => {
           <ListGroup.Item key={index} className="review-item">
             <h5>{review.title}</h5>
             <p>{review.description}</p>
+            <Badge variant="primary">Rating: {review.stars} Star{review.stars > 1 ? "s" : ""}</Badge>
             <div className="review-metadata">
               <small>Published by <strong>{review.author}</strong> on {(new Date(review.date)).toLocaleDateString("it-IT")}</small>
-              <Badge variant="primary">Rating: {review.stars} Star{review.stars > 1 ? "s" : ""}</Badge>
             </div>
           </ListGroup.Item>
         ))}

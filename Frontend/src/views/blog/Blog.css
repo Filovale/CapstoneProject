@@ -31,7 +31,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: -50px;
-  margin-left: 70px;
+  margin-left: 200px;
 }
 
 .blog-details-info {
@@ -47,8 +47,8 @@
 /* CSS per il riquadro software */
 .blog-details-softwares {
   padding: 20px;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: rgb(28, 115, 168, 0.8);
+  color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
@@ -69,15 +69,19 @@
   margin-bottom: 10px;
 }
 
+.blog-details-softwares h4 {
+  color: #ffffff;
+}
+
 .blog-details-softwares a {
-  color: #007bff; /* Colore del testo del link */
+  color: #ffffff; /* Colore del testo del link */
   text-decoration: none;
   font-size: 1rem; /* Dimensione del font */
 }
 
 .blog-details-softwares a:hover {
   text-decoration: underline;
-  color: #0056b3; /* Colore del testo del link al passaggio del mouse */
+  color: #ffffff; /* Colore del testo del link al passaggio del mouse */
 }
 
 .blog-details-div {
