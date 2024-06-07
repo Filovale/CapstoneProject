@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Badge } from "react-bootstrap";
 import PostReview from "./PostReview"; 
 import "./DroneReviews.css";
 
 const DroneReviews = ({ droneId }) => {
-
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     if (droneId) {
-
       fetch(`http://localhost:3001/drones/${droneId}/reviews`)
         .then((response) => response.json())
         .then((data) => {
@@ -34,7 +31,6 @@ const DroneReviews = ({ droneId }) => {
   }
 
   return (
-    
     <div className="drone-reviews">
       <h4>Reviews</h4>
       <ListGroup>
@@ -42,8 +38,10 @@ const DroneReviews = ({ droneId }) => {
           <ListGroup.Item key={index} className="review-item">
             <h5>{review.title}</h5>
             <p>{review.description}</p>
-            <small>By {review.author} on {(new Date(review.date)).toLocaleDateString("it-IT")}</small>
-            <div>Rating: {review.stars} Star{review.stars > 1 ? "s" : ""}</div>
+            <div className="review-metadata">
+              <small>Published by <strong>{review.author}</strong> on {(new Date(review.date)).toLocaleDateString("it-IT")}</small>
+              <Badge variant="primary">Rating: {review.stars} Star{review.stars > 1 ? "s" : ""}</Badge>
+            </div>
           </ListGroup.Item>
         ))}
       </ListGroup>

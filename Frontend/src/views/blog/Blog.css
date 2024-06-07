@@ -27,11 +27,11 @@
 }
 
 .blog-details-container {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  margin-top: -50px;
+  margin-left: 70px;
 }
 
 .blog-details-info {
@@ -39,11 +39,12 @@
   flex-direction: column;
   align-items: center;
 }
+
 .rdw-editor-main {
-  border: 1px solid grey
+  border: 1px solid grey;
 }
 
-/* qui quelle dei link del software*/
+/* CSS per il riquadro software */
 .blog-details-softwares {
   padding: 20px;
   background-color: #f8f9fa;
@@ -52,11 +53,16 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto; /* Aggiungere questa proprietà */
 }
 
 .blog-details-softwares ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .blog-details-softwares li {
@@ -74,3 +80,10 @@
   color: #0056b3; /* Colore del testo del link al passaggio del mouse */
 }
 
+.blog-details-div {
+  display: flex;
+  flex-direction: row;
+  margin: 100px;
+  padding-top: 50px;
+  justify-content: space-between;
+}

@@ -35,29 +35,29 @@ const Blog = props => {
     return (
 
         <Container className="container-fluid">
+        <div className="blog-details-div">
+          <div className="blog-details-covertitle">
           <Image className="blog-details-cover" src={drone.cover} fluid />
           <h1 className="blog-details-title">{drone.title}</h1>
-
-          <div className="blog-details-container">
-            <div className="blog-details-author">
-              <h4><a href={drone.author}>DJI</a></h4>
-            </div>
-            <div className="blog-details-info">
-              <a href={drone.info}>{drone.info}</a>
-            </div>
           </div>
-            <div className="blog-details-softwares">
-              <h4>Here there are all the compatible software to plan your flight:</h4>
-              <ul>
-                
+          <div className="blog-details-softwares">
+            <h4>Here there are all the compatible software to plan your flight:</h4>
+            <ul> 
                 {drone.software && drone.software.map(({name, link}, index) => (
                     <li key={index}>
                         <a href={link}>{name}</a>
                     </li>
                 ))}
             </ul>
-            </div>
+          </div>
+        </div>  
+          <div className="blog-details-container">
+              <h4>Made by                         <a href={drone.author}>DJI</a></h4>
+              <a href={drone.info}>Click here to go directly to the technical specifications</a>
+          </div>
+          <div className="drone-reviews">
             <DroneReviews droneId={id} />
+          </div>  
         </Container>
 
     );

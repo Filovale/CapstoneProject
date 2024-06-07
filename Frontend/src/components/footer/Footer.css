@@ -1,7 +1,7 @@
 .footer {
-    background-color:rgb(28,115,168);
+    background-color: rgb(28, 115, 168);
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .container {
@@ -13,6 +13,7 @@
 .column {
     flex: 1;
     margin: 0 20px;
+    text-align: center;
 }
 
 ul {
@@ -20,11 +21,20 @@ ul {
     padding: 0;
 }
 
+ul li {
+    margin: 10px 0;
+}
+
 ul li a {
     color: #fff;
     text-decoration: none;
+    transition: text-decoration 0.3s;
 }
 
 ul li a:hover {
     text-decoration: underline;
+}
+
+.fab {
+    margin-right: 10px;
 }

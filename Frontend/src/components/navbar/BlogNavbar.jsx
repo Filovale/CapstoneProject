@@ -13,7 +13,6 @@ const NavBar = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Controlla se esiste un token nel local storage all'avvio
     const token = localStorage.getItem("authToken");
     if (token) {
       setLoggedIn(true);
@@ -21,7 +20,6 @@ const NavBar = () => {
   }, []);
 
   const handleLogin = (token) => {
-    console.log(token);
     setLoggedIn(true);
     localStorage.setItem("authToken", token);
   };
@@ -36,15 +34,15 @@ const NavBar = () => {
       <Navbar expand="lg" className="blog-navbar" fixed="top">
         <Container className="justify-content-between">
           <Navbar.Brand as={Link} to="/">
-            <img className="blog-navbar-brand" alt="logo" src={logo} />
+            <img className="blog-navbar-brand no-hover" alt="logo" src={logo} />
           </Navbar.Brand>
           <div className="container-fluid">
             <h3 className="navbar-text">Drone Central</h3>
           </div>
         </Container>
         <ul className="navbar d-flex align-items-center">
-          <li><a href="/">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
           {loggedIn ? (
             <>
               <li><span>Welcome!</span></li>

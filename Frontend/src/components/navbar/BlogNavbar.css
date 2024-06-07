@@ -1,5 +1,18 @@
 .blog-navbar-brand {
   width: 180px;
+  pointer-events: none; /* Disabilita interazioni */
+}
+
+.blog-navbar-brand.no-hover {
+  pointer-events: none;
+  cursor: default;
+  transition: none;
+  background-color: inherit !important;
+}
+
+.blog-navbar-brand.no-hover:hover {
+  transform: none;
+  background-color: inherit !important;
 }
 
 .blog-navbar {
@@ -19,6 +32,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: nowrap; /* Prevent line break */
 }
 
 .navbar li {
@@ -45,4 +59,8 @@
   border: 2px solid #fff;
   transition: transform 0.3s;
   cursor: pointer;
+}
+
+.blog-navbar-login:hover {
+  transform: scale(1.1);
 }
